@@ -1,0 +1,1228 @@
+{
+    "subjects": [
+        {
+            "id": "math-1",
+            "title": "Mathematics Part 1",
+            "chapters": [
+                {
+                    "id": "m1-ch1",
+                    "title": "Linear Equations in Two Variables",
+                    "topics": [
+                        {
+                            "id": "m1-ch1-t1",
+                            "title": "Concept",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch1-t1-s1",
+                                    "title": "Linear Equation Form (ax + by + c = 0)"
+                                },
+                                {
+                                    "id": "m1-ch1-t1-s2",
+                                    "title": "Simultaneous Linear Equations"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch1-t2",
+                            "title": "Solving Methods",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch1-t2-s1",
+                                    "title": "Elimination/Substitution"
+                                },
+                                {
+                                    "id": "m1-ch1-t2-s2",
+                                    "title": "Graphical Method"
+                                },
+                                {
+                                    "id": "m1-ch1-t2-s3",
+                                    "title": "Cramer's Rule (Determinants)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch1-t3",
+                            "title": "Applications",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch1-t3-s1",
+                                    "title": "Equations Reducible to Linear Form"
+                                },
+                                {
+                                    "id": "m1-ch1-t3-s2",
+                                    "title": "Word Problems (Applications)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m1-ch2",
+                    "title": "Quadratic Equations",
+                    "topics": [
+                        {
+                            "id": "m1-ch2-t1",
+                            "title": "Concept",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch2-t1-s1",
+                                    "title": "Standard Form (ax² + bx + c = 0)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch2-t2",
+                            "title": "Solving Methods",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch2-t2-s1",
+                                    "title": "Factorisation"
+                                },
+                                {
+                                    "id": "m1-ch2-t2-s2",
+                                    "title": "Completing the Square"
+                                },
+                                {
+                                    "id": "m1-ch2-t2-s3",
+                                    "title": "Formula Method"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch2-t3",
+                            "title": "Roots Properties",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch2-t3-s1",
+                                    "title": "Nature of Roots (Discriminant Δ)"
+                                },
+                                {
+                                    "id": "m1-ch2-t3-s2",
+                                    "title": "Relation between Roots and Coefficients"
+                                },
+                                {
+                                    "id": "m1-ch2-t3-s3",
+                                    "title": "Obtaining Equation from Roots"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch2-t4",
+                            "title": "Applications",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch2-t4-s1",
+                                    "title": "Word Problems"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m1-ch3",
+                    "title": "Arithmetic Progression",
+                    "topics": [
+                        {
+                            "id": "m1-ch3-t1",
+                            "title": "Concept",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch3-t1-s1",
+                                    "title": "Sequence and Definition"
+                                },
+                                {
+                                    "id": "m1-ch3-t1-s2",
+                                    "title": "Common Difference (d)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch3-t2",
+                            "title": "Formulas",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch3-t2-s1",
+                                    "title": "nth Term Formula (tn)"
+                                },
+                                {
+                                    "id": "m1-ch3-t2-s2",
+                                    "title": "Sum of n Terms Formula (Sn)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch3-t3",
+                            "title": "Applications",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch3-t3-s1",
+                                    "title": "Applications of A.P."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m1-ch4",
+                    "title": "Financial Planning",
+                    "topics": [
+                        {
+                            "id": "m1-ch4-t1",
+                            "title": "Goods and Service Tax (GST)",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch4-t1-s1",
+                                    "title": "Introduction (One Nation, One Tax)"
+                                },
+                                {
+                                    "id": "m1-ch4-t1-s2",
+                                    "title": "Tax Invoice (CGST, SGST, HSN/SAC)"
+                                },
+                                {
+                                    "id": "m1-ch4-t1-s3",
+                                    "title": "Input Tax Credit (ITC)"
+                                },
+                                {
+                                    "id": "m1-ch4-t1-s4",
+                                    "title": "IGST (Inter-state Trade)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch4-t2",
+                            "title": "Investment Avenues",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch4-t2-s1",
+                                    "title": "Shares (FV, MV, Dividend, RoR)"
+                                },
+                                {
+                                    "id": "m1-ch4-t2-s2",
+                                    "title": "Mutual Funds (MF) and SIP"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m1-ch5",
+                    "title": "Probability",
+                    "topics": [
+                        {
+                            "id": "m1-ch5-t1",
+                            "title": "Basics",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch5-t1-s1",
+                                    "title": "Random Experiment and Outcome"
+                                },
+                                {
+                                    "id": "m1-ch5-t1-s2",
+                                    "title": "Equally Likely Outcomes"
+                                },
+                                {
+                                    "id": "m1-ch5-t1-s3",
+                                    "title": "Sample Space (S)"
+                                },
+                                {
+                                    "id": "m1-ch5-t1-s4",
+                                    "title": "Event (A)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch5-t2",
+                            "title": "Calculation",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch5-t2-s1",
+                                    "title": "Probability of an Event P(A)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m1-ch6",
+                    "title": "Statistics",
+                    "topics": [
+                        {
+                            "id": "m1-ch6-t1",
+                            "title": "Measures of Central Tendency",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch6-t1-s1",
+                                    "title": "Mean (Direct, Assumed Mean, Step Deviation)"
+                                },
+                                {
+                                    "id": "m1-ch6-t1-s2",
+                                    "title": "Median"
+                                },
+                                {
+                                    "id": "m1-ch6-t1-s3",
+                                    "title": "Mode"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m1-ch6-t2",
+                            "title": "Graphical Representation",
+                            "subtopics": [
+                                {
+                                    "id": "m1-ch6-t2-s1",
+                                    "title": "Histogram"
+                                },
+                                {
+                                    "id": "m1-ch6-t2-s2",
+                                    "title": "Frequency Polygon"
+                                },
+                                {
+                                    "id": "m1-ch6-t2-s3",
+                                    "title": "Pie Diagram"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "math-2",
+            "title": "Mathematics Part 2",
+            "chapters": [
+                {
+                    "id": "m2-ch1",
+                    "title": "Similarity",
+                    "topics": [
+                        {
+                            "id": "m2-ch1-t1",
+                            "title": "Area Properties",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch1-t1-s1",
+                                    "title": "Ratio of Areas of Two Triangles"
+                                },
+                                {
+                                    "id": "m2-ch1-t1-s2",
+                                    "title": "Property of Areas of Similar Triangles"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m2-ch1-t2",
+                            "title": "Theorems",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch1-t2-s1",
+                                    "title": "Basic Proportionality Theorem (BPT)"
+                                },
+                                {
+                                    "id": "m2-ch1-t2-s2",
+                                    "title": "Converse of BPT"
+                                },
+                                {
+                                    "id": "m2-ch1-t2-s3",
+                                    "title": "Tests of Similarity of Triangles"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch2",
+                    "title": "Pythagoras Theorem",
+                    "topics": [
+                        {
+                            "id": "m2-ch2-t1",
+                            "title": "Fundamentals",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch2-t1-s1",
+                                    "title": "Pythagorean Triplet"
+                                },
+                                {
+                                    "id": "m2-ch2-t1-s2",
+                                    "title": "Similarity and Right Angled Triangles"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m2-ch2-t2",
+                            "title": "Theorems",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch2-t2-s1",
+                                    "title": "Theorem of Geometric Mean"
+                                },
+                                {
+                                    "id": "m2-ch2-t2-s2",
+                                    "title": "Pythagoras Theorem"
+                                },
+                                {
+                                    "id": "m2-ch2-t2-s3",
+                                    "title": "Apollonius Theorem"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch3",
+                    "title": "Circle",
+                    "topics": [
+                        {
+                            "id": "m2-ch3-t1",
+                            "title": "Tangents and Secants",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch3-t1-s1",
+                                    "title": "Tangent and Secant"
+                                },
+                                {
+                                    "id": "m2-ch3-t1-s2",
+                                    "title": "Tangent Segment Theorem"
+                                },
+                                {
+                                    "id": "m2-ch3-t1-s3",
+                                    "title": "Touching Circles"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m2-ch3-t2",
+                            "title": "Angles and Arcs",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch3-t2-s1",
+                                    "title": "Arc of a Circle"
+                                },
+                                {
+                                    "id": "m2-ch3-t2-s2",
+                                    "title": "Inscribed Angle Theorem"
+                                },
+                                {
+                                    "id": "m2-ch3-t2-s3",
+                                    "title": "Cyclic Quadrilateral"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch4",
+                    "title": "Geometric Constructions",
+                    "topics": [
+                        {
+                            "id": "m2-ch4-t1",
+                            "title": "Constructions",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch4-t1-s1",
+                                    "title": "Construction of a Similar Triangle"
+                                },
+                                {
+                                    "id": "m2-ch4-t1-s2",
+                                    "title": "Construction of Tangent to a Circle"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch5",
+                    "title": "Coordinate Geometry",
+                    "topics": [
+                        {
+                            "id": "m2-ch5-t1",
+                            "title": "Formulas",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch5-t1-s1",
+                                    "title": "Distance Formula"
+                                },
+                                {
+                                    "id": "m2-ch5-t1-s2",
+                                    "title": "Section Formula"
+                                },
+                                {
+                                    "id": "m2-ch5-t1-s3",
+                                    "title": "Slope of a Line"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch6",
+                    "title": "Trigonometry",
+                    "topics": [
+                        {
+                            "id": "m2-ch6-t1",
+                            "title": "Basics",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch6-t1-s1",
+                                    "title": "Trigonometric Ratios"
+                                },
+                                {
+                                    "id": "m2-ch6-t1-s2",
+                                    "title": "Trigonometric Identities"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m2-ch6-t2",
+                            "title": "Applications",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch6-t2-s1",
+                                    "title": "Angle of Elevation and Depression"
+                                },
+                                {
+                                    "id": "m2-ch6-t2-s2",
+                                    "title": "Heights and Distances"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "m2-ch7",
+                    "title": "Mensuration",
+                    "topics": [
+                        {
+                            "id": "m2-ch7-t1",
+                            "title": "Surface Area and Volume",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch7-t1-s1",
+                                    "title": "Mixed Examples"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "m2-ch7-t2",
+                            "title": "Circle Measures",
+                            "subtopics": [
+                                {
+                                    "id": "m2-ch7-t2-s1",
+                                    "title": "Arc of Circle"
+                                },
+                                {
+                                    "id": "m2-ch7-t2-s2",
+                                    "title": "Area of a Sector"
+                                },
+                                {
+                                    "id": "m2-ch7-t2-s3",
+                                    "title": "Area of Segment of a Circle"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sci-1",
+            "title": "Science and Technology Part 1",
+            "chapters": [
+                {
+                    "id": "s1-ch1",
+                    "title": "Gravitation",
+                    "topics": [
+                        {
+                            "id": "s1-ch1-t1",
+                            "title": "Fundamentals",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch1-t1-s1",
+                                    "title": "Gravitation & Circular Motion"
+                                },
+                                {
+                                    "id": "s1-ch1-t1-s2",
+                                    "title": "Kepler's Laws"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch1-t2",
+                            "title": "Earth's Gravity",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch1-t2-s1",
+                                    "title": "Acceleration due to Gravity"
+                                },
+                                {
+                                    "id": "s1-ch1-t2-s2",
+                                    "title": "Free Fall"
+                                },
+                                {
+                                    "id": "s1-ch1-t2-s3",
+                                    "title": "Escape Velocity"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch2",
+                    "title": "Periodic Classification of Elements",
+                    "topics": [
+                        {
+                            "id": "s1-ch2-t1",
+                            "title": "Early Attempts",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch2-t1-s1",
+                                    "title": "Dobereiner's Triads"
+                                },
+                                {
+                                    "id": "s1-ch2-t1-s2",
+                                    "title": "Newlands' Law of Octaves"
+                                },
+                                {
+                                    "id": "s1-ch2-t1-s3",
+                                    "title": "Mendeleev's Periodic Table"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch2-t2",
+                            "title": "Modern Periodic Table",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch2-t2-s1",
+                                    "title": "Structure of Modern Periodic Table"
+                                },
+                                {
+                                    "id": "s1-ch2-t2-s2",
+                                    "title": "Periodic Trends"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch3",
+                    "title": "Chemical Reactions and Equations",
+                    "topics": [
+                        {
+                            "id": "s1-ch3-t1",
+                            "title": "Writing Equations",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch3-t1-s1",
+                                    "title": "Chemical Reactions"
+                                },
+                                {
+                                    "id": "s1-ch3-t1-s2",
+                                    "title": "Rules of Writing"
+                                },
+                                {
+                                    "id": "s1-ch3-t1-s3",
+                                    "title": "Balancing Equations"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch3-t2",
+                            "title": "Types of Reactions",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch3-t2-s1",
+                                    "title": "Combination, Decomposition, Displacement, Double Displacement"
+                                },
+                                {
+                                    "id": "s1-ch3-t2-s2",
+                                    "title": "Oxidation and Reduction"
+                                },
+                                {
+                                    "id": "s1-ch3-t2-s3",
+                                    "title": "Corrosion and Rancidity"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch4",
+                    "title": "Effects of Electric Current",
+                    "topics": [
+                        {
+                            "id": "s1-ch4-t1",
+                            "title": "Heating Effect",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch4-t1-s1",
+                                    "title": "Energy Transfer"
+                                },
+                                {
+                                    "id": "s1-ch4-t1-s2",
+                                    "title": "Joule's Law"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch4-t2",
+                            "title": "Magnetic Effect",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch4-t2-s1",
+                                    "title": "Magnetic Field due to Current"
+                                },
+                                {
+                                    "id": "s1-ch4-t2-s2",
+                                    "title": "Force on Conductor"
+                                },
+                                {
+                                    "id": "s1-ch4-t2-s3",
+                                    "title": "Electric Motor and Generator"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch5",
+                    "title": "Heat",
+                    "topics": [
+                        {
+                            "id": "s1-ch5-t1",
+                            "title": "Concepts",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch5-t1-s1",
+                                    "title": "Latent Heat"
+                                },
+                                {
+                                    "id": "s1-ch5-t1-s2",
+                                    "title": "Anomalous Behaviour of Water"
+                                },
+                                {
+                                    "id": "s1-ch5-t1-s3",
+                                    "title": "Specific Heat Capacity"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch6",
+                    "title": "Refraction of Light",
+                    "topics": [
+                        {
+                            "id": "s1-ch6-t1",
+                            "title": "Principles",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch6-t1-s1",
+                                    "title": "Refraction of Light"
+                                },
+                                {
+                                    "id": "s1-ch6-t1-s2",
+                                    "title": "Laws of Refraction"
+                                },
+                                {
+                                    "id": "s1-ch6-t1-s3",
+                                    "title": "Refractive Index"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch6-t2",
+                            "title": "Natural Phenomena",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch6-t2-s1",
+                                    "title": "Dispersion of Light"
+                                },
+                                {
+                                    "id": "s1-ch6-t2-s2",
+                                    "title": "Atmospheric Refraction"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch7",
+                    "title": "Lenses",
+                    "topics": [
+                        {
+                            "id": "s1-ch7-t1",
+                            "title": "Types and Images",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch7-t1-s1",
+                                    "title": "Lenses and Ray Diagrams"
+                                },
+                                {
+                                    "id": "s1-ch7-t1-s2",
+                                    "title": "Sign Convention"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch7-t2",
+                            "title": "Human Eye",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch7-t2-s1",
+                                    "title": "Structure and Working"
+                                },
+                                {
+                                    "id": "s1-ch7-t2-s2",
+                                    "title": "Defects of Vision"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch8",
+                    "title": "Metallurgy",
+                    "topics": [
+                        {
+                            "id": "s1-ch8-t1",
+                            "title": "Properties",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch8-t1-s1",
+                                    "title": "Physical Properties"
+                                },
+                                {
+                                    "id": "s1-ch8-t1-s2",
+                                    "title": "Chemical Properties"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch8-t2",
+                            "title": "Extraction",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch8-t2-s1",
+                                    "title": "Extraction of Metals"
+                                },
+                                {
+                                    "id": "s1-ch8-t2-s2",
+                                    "title": "Corrosion and Prevention"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch9",
+                    "title": "Carbon Compounds",
+                    "topics": [
+                        {
+                            "id": "s1-ch9-t1",
+                            "title": "Bonding and Structure",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch9-t1-s1",
+                                    "title": "Covalent Bonds"
+                                },
+                                {
+                                    "id": "s1-ch9-t1-s2",
+                                    "title": "Hydrocarbons"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch9-t2",
+                            "title": "Classification",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch9-t2-s1",
+                                    "title": "Functional Groups"
+                                },
+                                {
+                                    "id": "s1-ch9-t2-s2",
+                                    "title": "Homologous Series"
+                                },
+                                {
+                                    "id": "s1-ch9-t2-s3",
+                                    "title": "Nomenclature"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch9-t3",
+                            "title": "Properties",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch9-t3-s1",
+                                    "title": "Chemical Properties"
+                                },
+                                {
+                                    "id": "s1-ch9-t3-s2",
+                                    "title": "Important Compounds (Ethanol, Ethanoic Acid)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s1-ch10",
+                    "title": "Space Missions",
+                    "topics": [
+                        {
+                            "id": "s1-ch10-t1",
+                            "title": "Satellites",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch10-t1-s1",
+                                    "title": "Artificial Satellites and Orbits"
+                                },
+                                {
+                                    "id": "s1-ch10-t1-s2",
+                                    "title": "Launch Vehicles"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s1-ch10-t2",
+                            "title": "Space Debris",
+                            "subtopics": [
+                                {
+                                    "id": "s1-ch10-t2-s1",
+                                    "title": "Space Debris and Management"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sci-2",
+            "title": "Science and Technology Part 2",
+            "chapters": [
+                {
+                    "id": "s2-ch1",
+                    "title": "Heredity and Evolution",
+                    "topics": [
+                        {
+                            "id": "s2-ch1-t1",
+                            "title": "Heredity",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch1-t1-s1",
+                                    "title": "Heredity and Changes"
+                                },
+                                {
+                                    "id": "s2-ch1-t1-s2",
+                                    "title": "Transcription, Translation, Translocation"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch1-t2",
+                            "title": "Evolution",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch1-t2-s1",
+                                    "title": "Theory of Evolution"
+                                },
+                                {
+                                    "id": "s2-ch1-t2-s2",
+                                    "title": "Evidences of Evolution"
+                                },
+                                {
+                                    "id": "s2-ch1-t2-s3",
+                                    "title": "Darwin's Theory & Lamarckism"
+                                },
+                                {
+                                    "id": "s2-ch1-t2-s4",
+                                    "title": "Human Evolution"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch2",
+                    "title": "Life Processes Part 1",
+                    "topics": [
+                        {
+                            "id": "s2-ch2-t1",
+                            "title": "Energy Production",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch2-t1-s1",
+                                    "title": "Respiration and Energy Transfer"
+                                },
+                                {
+                                    "id": "s2-ch2-t1-s2",
+                                    "title": "Aerobic and Anaerobic Respiration"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch2-t2",
+                            "title": "Cell Division",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch2-t2-s1",
+                                    "title": "Mitosis and Meiosis"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch3",
+                    "title": "Life Processes Part 2",
+                    "topics": [
+                        {
+                            "id": "s2-ch3-t1",
+                            "title": "Reproduction",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch3-t1-s1",
+                                    "title": "Asexual Reproduction"
+                                },
+                                {
+                                    "id": "s2-ch3-t1-s2",
+                                    "title": "Sexual Reproduction in Plants and Humans"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch3-t2",
+                            "title": "Health",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch3-t2-s1",
+                                    "title": "Reproductive Health"
+                                },
+                                {
+                                    "id": "s2-ch3-t2-s2",
+                                    "title": "Population Explosion"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch4",
+                    "title": "Environmental Management",
+                    "topics": [
+                        {
+                            "id": "s2-ch4-t1",
+                            "title": "Ecosystem",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch4-t1-s1",
+                                    "title": "Ecosystem Review"
+                                },
+                                {
+                                    "id": "s2-ch4-t1-s2",
+                                    "title": "Environment Conservation"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch4-t2",
+                            "title": "Biodiversity",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch4-t2-s1",
+                                    "title": "Biodiversity Hotspots"
+                                },
+                                {
+                                    "id": "s2-ch4-t2-s2",
+                                    "title": "Classification of Threatened Species"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch5",
+                    "title": "Towards Green Energy",
+                    "topics": [
+                        {
+                            "id": "s2-ch5-t1",
+                            "title": "Power Generation",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch5-t1-s1",
+                                    "title": "Thermal, Nuclear, Natural Gas"
+                                },
+                                {
+                                    "id": "s2-ch5-t1-s2",
+                                    "title": "Green Energy (Hydro, Wind, Solar)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch6",
+                    "title": "Animal Classification",
+                    "topics": [
+                        {
+                            "id": "s2-ch6-t1",
+                            "title": "Systems",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch6-t1-s1",
+                                    "title": "Traditional vs New Method"
+                                },
+                                {
+                                    "id": "s2-ch6-t1-s2",
+                                    "title": "Criteria for Classification"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch6-t2",
+                            "title": "Phyla",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch6-t2-s1",
+                                    "title": "Study of Phyla (Porifera to Chordata)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch7",
+                    "title": "Introduction to Microbiology",
+                    "topics": [
+                        {
+                            "id": "s2-ch7-t1",
+                            "title": "Applied Microbiology",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch7-t1-s1",
+                                    "title": "Dairy Products"
+                                },
+                                {
+                                    "id": "s2-ch7-t1-s2",
+                                    "title": "Industrial Products"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch7-t2",
+                            "title": "Environmental Role",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch7-t2-s1",
+                                    "title": "Sewage Management"
+                                },
+                                {
+                                    "id": "s2-ch7-t2-s2",
+                                    "title": "Clean Technology"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch8",
+                    "title": "Cell Biology and Biotechnology",
+                    "topics": [
+                        {
+                            "id": "s2-ch8-t1",
+                            "title": "Stem Cells",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch8-t1-s1",
+                                    "title": "Types and Uses of Stem Cells"
+                                },
+                                {
+                                    "id": "s2-ch8-t1-s2",
+                                    "title": "Organ Transplantation"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch8-t2",
+                            "title": "Biotechnology",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch8-t2-s1",
+                                    "title": "Applications in Agriculture and Health"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch9",
+                    "title": "Social Health",
+                    "topics": [
+                        {
+                            "id": "s2-ch9-t1",
+                            "title": "Factors",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch9-t1-s1",
+                                    "title": "Factors Affecting Social Health"
+                                },
+                                {
+                                    "id": "s2-ch9-t1-s2",
+                                    "title": "Stress Management"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch9-t2",
+                            "title": "Addiction",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch9-t2-s1",
+                                    "title": "Addiction and Incurable Diseases"
+                                },
+                                {
+                                    "id": "s2-ch9-t2-s2",
+                                    "title": "Cyber Crimes"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "s2-ch10",
+                    "title": "Disaster Management",
+                    "topics": [
+                        {
+                            "id": "s2-ch10-t1",
+                            "title": "Disasters",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch10-t1-s1",
+                                    "title": "Types and Effects"
+                                },
+                                {
+                                    "id": "s2-ch10-t1-s2",
+                                    "title": "Nature and Scope"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "s2-ch10-t2",
+                            "title": "Management",
+                            "subtopics": [
+                                {
+                                    "id": "s2-ch10-t2-s1",
+                                    "title": "Disaster Management Authority"
+                                },
+                                {
+                                    "id": "s2-ch10-t2-s2",
+                                    "title": "First Aid and Mock Drills"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

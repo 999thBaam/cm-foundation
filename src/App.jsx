@@ -8,6 +8,7 @@ import Practice from './pages/Practice';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import AIAssistant from './pages/AIAssistant';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
         <Route path="ai-assistant" element={<AIAssistant />} />
+        <Route path="admin" element={<Admin />} />
       </Route>
     </Routes>
   );

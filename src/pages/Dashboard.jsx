@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Atom, Calculator, Flame, Zap, TrendingUp, Award } from 'lucide-react';
 
+import { useStore } from '../store/useStore';
+
 const Dashboard = () => {
+    const { curriculum } = useStore();
+    const subjects = curriculum.subjects;
+
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -60,57 +65,40 @@ const Dashboard = () => {
                 animate="show"
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
-                <Link to="/subject/science" className="group">
-                    <motion.div
-                        variants={item}
-                        whileHover={{ y: -5 }}
-                        className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all h-full relative overflow-hidden"
-                    >
-                        <div className="absolute top-0 right-0 p-32 bg-blue-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
-                        <div className="relative z-10">
-                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
-                                <Atom size={28} />
-                            </div>
-                            <h2 className="text-2xl font-bold text-slate-900 mb-2">Science</h2>
-                            <p className="text-slate-600 mb-6">Physics, Chemistry, and Biology concepts explained simply.</p>
+                {subjects.map((subject) => (
+                    <Link key={subject.id} to={`/subject/${subject.id}`} className="group">
+                        <motion.div
+                            variants={item}
+                            whileHover={{ y: -5 }}
+                            className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all h-full relative overflow-hidden"
+                        >
+                            <div className={`absolute top-0 right-0 p-32 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform duration-500 ${subject.id.includes('math') ? 'bg-purple-50' : 'bg-blue-50'
+                                }`}></div>
+                            <div className="relative z-10">
+                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${subject.id.includes('math') ? 'bg-purple-100 text-purple-600' : 'bg-blue-100 text-blue-600'
+                                    }`}>
+                                    {subject.id.includes('math') ? <Calculator size={28} /> : <Atom size={28} />}
+                                </div>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-2">{subject.title}</h2>
+                                <p className="text-slate-600 mb-6">
+                                    {subject.id.includes('math')
+                                        ? 'Algebra, Geometry, and Trigonometry mastered easily.'
+                                        : 'Physics, Chemistry, and Biology concepts explained simply.'}
+                                </p>
 
-                            <div className="flex items-center gap-4 text-sm text-slate-500">
-                                <span className="flex items-center gap-1"><Zap size={16} /> 12 Chapters</span>
-                                <span className="flex items-center gap-1"><TrendingUp size={16} /> 45% Complete</span>
-                            </div>
+                                <div className="flex items-center gap-4 text-sm text-slate-500">
+                                    <span className="flex items-center gap-1"><Zap size={16} /> {subject.chapters.length} Chapters</span>
+                                    <span className="flex items-center gap-1"><TrendingUp size={16} /> 0% Complete</span>
+                                </div>
 
-                            <div className="mt-6 w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                <div className="bg-blue-500 h-full rounded-full" style={{ width: '45%' }}></div>
+                                <div className="mt-6 w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                    <div className={`h-full rounded-full ${subject.id.includes('math') ? 'bg-purple-500' : 'bg-blue-500'
+                                        }`} style={{ width: '0%' }}></div>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                </Link>
-
-                <Link to="/subject/math" className="group">
-                    <motion.div
-                        variants={item}
-                        whileHover={{ y: -5 }}
-                        className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all h-full relative overflow-hidden"
-                    >
-                        <div className="absolute top-0 right-0 p-32 bg-purple-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
-                        <div className="relative z-10">
-                            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
-                                <Calculator size={28} />
-                            </div>
-                            <h2 className="text-2xl font-bold text-slate-900 mb-2">Mathematics</h2>
-                            <p className="text-slate-600 mb-6">Algebra, Geometry, and Trigonometry mastered easily.</p>
-
-                            <div className="flex items-center gap-4 text-sm text-slate-500">
-                                <span className="flex items-center gap-1"><Zap size={16} /> 15 Chapters</span>
-                                <span className="flex items-center gap-1"><TrendingUp size={16} /> 30% Complete</span>
-                            </div>
-
-                            <div className="mt-6 w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                                <div className="bg-purple-500 h-full rounded-full" style={{ width: '30%' }}></div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </Link>
+                        </motion.div>
+                    </Link>
+                ))}
             </motion.div>
 
             {/* Recent Activity / Continue Learning */}
