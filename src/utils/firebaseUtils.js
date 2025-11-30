@@ -148,3 +148,96 @@ export async function fetchCurriculum() {
         throw error;
     }
 }
+
+/**
+ * Fetches all flashcards for a specific chapter
+ * @param {string} chapterId - The ID of the chapter
+ * @returns {Promise<Array>} Array of flashcard objects
+ */
+export async function fetchFlashcards(chapterId) {
+    try {
+        const flashcardsSnapshot = await getDocs(collection(db, 'flashcards'));
+        const flashcards = flashcardsSnapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .filter(flashcard => flashcard.chapterId === chapterId);
+
+        return flashcards;
+    } catch (error) {
+        console.error('Error fetching flashcards:', error);
+        throw error;
+    }
+}
+
+/**
+ * Fetches all flashcards across all chapters
+ * @returns {Promise<Array>} Array of all flashcard objects
+ */
+export async function fetchAllFlashcards() {
+    try {
+        const flashcardsSnapshot = await getDocs(collection(db, 'flashcards'));
+        const flashcards = flashcardsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        return flashcards;
+    } catch (error) {
+        console.error('Error fetching all flashcards:', error);
+        throw error;
+    }
+}
+
+/**
+ * Adds a new flashcard to Firestore
+ * @param {string} chapterId - The ID of the chapter
+ * @param {Object} flashcardData - The flashcard data (question, answer, etc.)
+ * @returns {Promise<Object>} The created flashcard with ID
+ */
+export async function addFlashcard(chapterId, flashcardData) {
+    try {
+        const flashcardRef = await addDoc(collection(db, 'flashcards'), {
+            chapterId,
+            question: flashcardData.question,
+            answer: flashcardData.answer,
+            difficulty: flashcardData.difficulty || 'medium',
+            tags: flashcardData.tags || [],
+            createdAt: new Date().toISOString()
+        });
+
+        return { id: flashcardRef.id, chapterId, ...flashcardData };
+    } catch (error) {
+        console.error('Error adding flashcard:', error);
+        throw error;
+    }
+}
+
+/**
+ * Updates an existing flashcard
+ * @param {string} flashcardId - The ID of the flashcard to update
+ * @param {Object} updates - The fields to update
+ * @returns {Promise<void>}
+ */
+export async function updateFlashcard(flashcardId, updates) {
+    try {
+        const flashcardRef = doc(db, 'flashcards', flashcardId);
+        await setDoc(flashcardRef, {
+            ...updates,
+            updatedAt: new Date().toISOString()
+        }, { merge: true });
+    } catch (error) {
+        console.error('Error updating flashcard:', error);
+        throw error;
+    }
+}
+
+/**
+ * Deletes a flashcard from Firestore
+ * @param {string} flashcardId - The ID of the flashcard to delete
+ * @returns {Promise<void>}
+ */
+export async function deleteFlashcard(flashcardId) {
+    try {
+        const { deleteDoc } = await import('firebase/firestore');
+        const flashcardRef = doc(db, 'flashcards', flashcardId);
+        await deleteDoc(flashcardRef);
+    } catch (error) {
+        console.error('Error deleting flashcard:', error);
+        throw error;
+    }
+}

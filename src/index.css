@@ -41,4 +41,14 @@
   .card {
     @apply bg-white rounded-xl shadow-sm border border-slate-100 p-6;
   }
+
+  /* Flashcard 3D flip utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 }

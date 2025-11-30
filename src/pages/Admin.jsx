@@ -10,8 +10,10 @@ import {
     Save,
     Trash2,
     ChevronRight,
-    AlertCircle
+    AlertCircle,
+    Layers
 } from 'lucide-react';
+import FlashcardManager from '../components/admin/FlashcardManager';
 import { clsx } from 'clsx';
 import { db } from '../config/firebase'; // Import to check connection
 
@@ -48,6 +50,7 @@ const Admin = () => {
         { id: 'subjects', label: 'Subjects', icon: Book },
         { id: 'chapters', label: 'Chapters', icon: List },
         { id: 'topics', label: 'Topics', icon: FileText },
+        { id: 'flashcards', label: 'Flashcards', icon: Layers },
         { id: 'settings', label: 'Settings', icon: Settings },
     ];
 
@@ -104,7 +107,11 @@ const Admin = () => {
                         <DashboardContent />
                     )}
 
-                    {activeTab !== 'dashboard' && (
+                    {activeTab === 'flashcards' && (
+                        <FlashcardManager />
+                    )}
+
+                    {activeTab !== 'dashboard' && activeTab !== 'flashcards' && (
                         <div className="flex flex-col items-center justify-center h-64 text-slate-400">
                             <List size={48} className="mb-4 opacity-20" />
                             <p>Select an item to edit or create a new one.</p>

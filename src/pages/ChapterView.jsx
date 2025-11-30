@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronRight, PlayCircle, FileText, HelpCircle, CheckCircle } from 'lucide-react';
+import { ChevronRight, PlayCircle, FileText, HelpCircle, CheckCircle, Layers } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useStore } from '../store/useStore';
+import { fetchFlashcards } from '../utils/firebaseUtils';
+import FlashcardViewer from '../components/FlashcardViewer';
 
 const ChapterView = () => {
     const { chapterId } = useParams();
     const { findChapter } = useStore();
     const chapter = findChapter(chapterId);
+    const [flashcards, setFlashcards] = useState([]);
+    const [loadingFlashcards, setLoadingFlashcards] = useState(true);
+    const [showFlashcards, setShowFlashcards] = useState(false);
+
+    useEffect(() => {
+        if (chapterId) {
+            loadFlashcards();
+        }
+    }, [chapterId]);
+
+    const loadFlashcards = async () => {
+        setLoadingFlashcards(true);
+        try {
+            const cards = await fetchFlashcards(chapterId);
+            setFlashcards(cards);
+        } catch (error) {
+            console.error('Error loading flashcards:', error);
+        } finally {
+            setLoadingFlashcards(false);
+        }
+    };
 
     if (!chapter) return <div className="p-8">Chapter not found</div>;
 
@@ -68,11 +91,42 @@ const ChapterView = () => {
                                 Start Learning
                             </Link>
                         )}
+                        {!loadingFlashcards && flashcards.length > 0 && (
+                            <button
+                                onClick={() => setShowFlashcards(!showFlashcards)}
+                                className="px-8 py-3 rounded-xl font-medium border-2 border-primary-500 text-primary-600 hover:bg-primary-50 transition-colors flex items-center gap-2"
+                            >
+                                <Layers size={20} />
+                                {showFlashcards ? 'Hide' : 'View'} Flashcards ({flashcards.length})
+                            </button>
+                        )}
                     </div>
                 </div>
+
+                {/* Flashcards Section */}
+                {showFlashcards && flashcards.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8"
+                    >
+                        <FlashcardViewer flashcards={flashcards} />
+                    </motion.div>
+                )}
+
+                {/* Loading State */}
+                {loadingFlashcards && (
+                    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+                        <div className="flex items-center justify-center py-8 text-slate-400">
+                            <div className="w-6 h-6 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mr-3"></div>
+                            Loading flashcards...
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
 };
 
 export default ChapterView;
+
