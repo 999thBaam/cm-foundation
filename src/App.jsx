@@ -9,20 +9,34 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import AIAssistant from './pages/AIAssistant';
 import Admin from './pages/Admin';
+import DemoDottedSurface from './pages/DemoDottedSurface';
+import Login from './pages/Login';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="subject/:subjectId" element={<SubjectView />} />
-        <Route path="chapter/:chapterId" element={<ChapterView />} />
-        <Route path="topic/:topicId" element={<TopicView />} />
-        <Route path="practice" element={<Practice />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="ai-assistant" element={<AIAssistant />} />
-        <Route path="admin" element={<Admin />} />
+      {/* Public Route */}
+      <Route path="/" element={<Login />} />
+      <Route path="/demo-dotted-surface" element={<DemoDottedSurface />} />
+
+      {/* Protected Routes */}
+      <Route
+        element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/subject/:subjectId" element={<SubjectView />} />
+        <Route path="/chapter/:chapterId" element={<ChapterView />} />
+        <Route path="/topic/:topicId" element={<TopicView />} />
+        <Route path="/practice" element={<Practice />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/ai-assistant" element={<AIAssistant />} />
+        <Route path="/admin" element={<Admin />} />
       </Route>
     </Routes>
   );
