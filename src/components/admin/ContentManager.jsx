@@ -19,7 +19,7 @@ import {
     addTopic, updateTopic, deleteTopic,
     addSubtopic, updateSubtopic, deleteSubtopic,
     fetchCurriculum
-} from '../../utils/firebaseUtils';
+} from '../../utils/supabaseUtils';
 
 const ContentManager = () => {
     // Navigation State

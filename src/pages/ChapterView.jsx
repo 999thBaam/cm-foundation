@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronDown, PlayCircle, FileText, HelpCircle, Lightbulb, Calculator, Rocket, Layers, Lock, Play } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useStore } from '../store/useStore';
-import { fetchFlashcards } from '../utils/firebaseUtils';
+import { fetchFlashcards } from '../utils/supabaseUtils';
 import FlashcardViewer from '../components/FlashcardViewer';
 
 // Icon mapping for topic types

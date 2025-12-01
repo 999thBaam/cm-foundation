@@ -16,31 +16,29 @@ import {
 import FlashcardManager from '../components/admin/FlashcardManager';
 import ContentManager from '../components/admin/ContentManager';
 import { clsx } from 'clsx';
-import { db } from '../config/firebase'; // Import to check connection
+import { supabase } from '../config/supabaseClient';
 
 const Admin = () => {
     const [activeTab, setActiveTab] = useState('dashboard');
 
-    // Check if Firebase is configured (basic check)
-    const isFirebaseConfigured = import.meta.env.VITE_FIREBASE_API_KEY &&
-        import.meta.env.VITE_FIREBASE_API_KEY !== 'your_api_key_here';
+    // Check if Supabase is configured
+    const isSupabaseConfigured = import.meta.env.VITE_SUPABASE_URL &&
+        import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-    if (!isFirebaseConfigured) {
+    if (!isSupabaseConfigured) {
         return (
             <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
                 <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-4">
                     <AlertCircle size={32} />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Firebase Not Configured</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-2">Supabase Not Configured</h2>
                 <p className="text-slate-600 max-w-md mb-6">
-                    Please configure your Firebase credentials in the <code>.env</code> file to access the Admin Panel.
+                    Please configure your Supabase credentials in the <code>.env</code> file to access the Admin Panel.
                 </p>
                 <div className="bg-slate-900 text-white px-6 py-4 rounded-lg text-left font-mono text-sm overflow-x-auto max-w-2xl w-full">
                     <p className="text-slate-400 mb-2"># .env</p>
-                    <p>VITE_FIREBASE_API_KEY=...</p>
-                    <p>VITE_FIREBASE_AUTH_DOMAIN=...</p>
-                    <p>VITE_FIREBASE_PROJECT_ID=...</p>
-                    <p>...</p>
+                    <p>VITE_SUPABASE_URL=...</p>
+                    <p>VITE_SUPABASE_ANON_KEY=...</p>
                 </div>
             </div>
         );
@@ -130,7 +128,7 @@ const DashboardContent = () => {
         setSeedStatus(null);
 
         try {
-            const { seedCurriculum } = await import('../utils/firebaseUtils');
+            const { seedCurriculum } = await import('../utils/supabaseUtils');
             const result = await seedCurriculum();
             setSeedStatus(result);
         } catch (error) {

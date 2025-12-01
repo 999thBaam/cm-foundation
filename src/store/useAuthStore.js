@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { auth } from '../lib/firebase';
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { supabase } from '../config/supabaseClient';
 
 export const useAuthStore = create(
     persist(
@@ -10,12 +9,17 @@ export const useAuthStore = create(
             isLoading: false,
             error: null,
 
+            setUser: (user) => set({ user }),
+
             loginWithGoogle: async () => {
                 set({ isLoading: true, error: null });
                 try {
-                    const provider = new GoogleAuthProvider();
-                    const result = await signInWithPopup(auth, provider);
-                    set({ user: result.user, isLoading: false });
+                    const { error } = await supabase.auth.signInWithOAuth({
+                        provider: 'google',
+                    });
+                    if (error) throw error;
+                    // Supabase will redirect, so we don't set user here
+                    set({ isLoading: false });
                 } catch (error) {
                     set({ error: error.message, isLoading: false });
                 }
@@ -36,7 +40,7 @@ export const useAuthStore = create(
             logout: async () => {
                 set({ isLoading: true });
                 try {
-                    await signOut(auth);
+                    await supabase.auth.signOut();
                     set({ user: null, isLoading: false });
                 } catch (error) {
                     set({ error: error.message, isLoading: false });

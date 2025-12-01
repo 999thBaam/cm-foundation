@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Edit2, Trash2, Save, X, BookOpen, AlertCircle } from 'lucide-react';
-import { fetchAllFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } from '../../utils/firebaseUtils';
+import { fetchAllFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } from '../../utils/supabaseUtils';
 import { useStore } from '../../store/useStore';
 
 const FlashcardManager = () => {
@@ -292,8 +292,8 @@ const FlashcardManager = () => {
                                                             #{index + 1}
                                                         </span>
                                                         <span className={`text-xs px-2 py-0.5 rounded ${flashcard.difficulty === 'easy' ? 'bg-green-100 text-green-700' :
-                                                                flashcard.difficulty === 'hard' ? 'bg-red-100 text-red-700' :
-                                                                    'bg-yellow-100 text-yellow-700'
+                                                            flashcard.difficulty === 'hard' ? 'bg-red-100 text-red-700' :
+                                                                'bg-yellow-100 text-yellow-700'
                                                             }`}>
                                                             {flashcard.difficulty}
                                                         </span>

@@ -1,4 +1,5 @@
 
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import curriculumData from '../data/curriculum.json';
@@ -19,7 +20,7 @@ export const useStore = create(
             fetchCurriculum: async () => {
                 set({ isLoading: true });
                 try {
-                    const { fetchCurriculum } = await import('../utils/firebaseUtils');
+                    const { fetchCurriculum } = await import('../utils/supabaseUtils');
                     const data = await fetchCurriculum();
                     set({ curriculum: data, isLoading: false });
                 } catch (error) {
