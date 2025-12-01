@@ -14,7 +14,7 @@ const Navbar = () => {
     const location = useLocation();
 
     const navItems = [
-        { name: 'Home', path: '/', icon: Home },
+        { name: 'Home', path: '/dashboard', icon: Home },
         { name: 'Subjects', path: '/subject/science', icon: BookOpen }, // Default to science for now
         { name: 'Profile', path: '/profile', icon: User },
         { name: 'Settings', path: '/settings', icon: Settings },
@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="flex-shrink-0 flex items-center gap-2">
+                        <Link to="/dashboard" className="flex-shrink-0 flex items-center gap-2">
                             <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
                                 C
                             </div>

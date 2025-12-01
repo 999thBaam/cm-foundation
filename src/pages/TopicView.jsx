@@ -15,7 +15,7 @@ const TopicView = () => {
         <div className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-                <Link to="/" className="hover:text-slate-900">Home</Link>
+                <Link to="/dashboard" className="hover:text-slate-900">Home</Link>
                 <ChevronRight size={16} />
                 <Link to={`/subject/${subtopic.subjectId}`} className="hover:text-slate-900">{subtopic.subjectTitle}</Link>
                 <ChevronRight size={16} />

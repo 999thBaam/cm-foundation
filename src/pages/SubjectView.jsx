@@ -29,7 +29,7 @@ const SubjectView = () => {
     return (
         <div className="space-y-6">
             <div className="flex items-center gap-2 text-sm text-slate-500">
-                <Link to="/" className="hover:text-slate-900">Home</Link>
+                <Link to="/dashboard" className="hover:text-slate-900">Home</Link>
                 <ChevronRight size={16} />
                 <span className="text-slate-900 font-medium">{subject.title}</span>
             </div>
