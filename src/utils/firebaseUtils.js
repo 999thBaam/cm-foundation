@@ -91,56 +91,42 @@ export async function seedCurriculum() {
 /**
  * Fetches all curriculum data from Firestore
  */
+/**
+ * Fetches all curriculum data from Firestore
+ * Optimized to fetch all collections once and assemble in memory
+ */
 export async function fetchCurriculum() {
     try {
-        const subjects = [];
+        // Fetch all collections in parallel
+        const [subjectsSnap, chaptersSnap, topicsSnap, subtopicsSnap] = await Promise.all([
+            getDocs(collection(db, 'subjects')),
+            getDocs(collection(db, 'chapters')),
+            getDocs(collection(db, 'topics')),
+            getDocs(collection(db, 'subtopics'))
+        ]);
 
-        // Fetch all subjects
-        const subjectsSnapshot = await getDocs(collection(db, 'subjects'));
+        // Convert to arrays
+        const allSubjects = subjectsSnap.docs.map(d => d.data());
+        const allChapters = chaptersSnap.docs.map(d => d.data());
+        const allTopics = topicsSnap.docs.map(d => d.data());
+        const allSubtopics = subtopicsSnap.docs.map(d => d.data());
 
-        for (const subjectDoc of subjectsSnapshot.docs) {
-            const subjectData = subjectDoc.data();
-            const chapters = [];
-
-            // Fetch chapters for this subject
-            const chaptersSnapshot = await getDocs(collection(db, 'chapters'));
-            const subjectChapters = chaptersSnapshot.docs
-                .map(doc => doc.data())
-                .filter(chapter => chapter.subjectId === subjectData.id);
-
-            for (const chapterData of subjectChapters) {
-                const topics = [];
-
-                // Fetch topics for this chapter
-                const topicsSnapshot = await getDocs(collection(db, 'topics'));
-                const chapterTopics = topicsSnapshot.docs
-                    .map(doc => doc.data())
-                    .filter(topic => topic.chapterId === chapterData.id);
-
-                for (const topicData of chapterTopics) {
-                    // Fetch subtopics for this topic
-                    const subtopicsSnapshot = await getDocs(collection(db, 'subtopics'));
-                    const topicSubtopics = subtopicsSnapshot.docs
-                        .map(doc => doc.data())
-                        .filter(subtopic => subtopic.topicId === topicData.id);
-
-                    topics.push({
-                        ...topicData,
-                        subtopics: topicSubtopics
-                    });
-                }
-
-                chapters.push({
-                    ...chapterData,
-                    topics
+        // Assemble hierarchy
+        const subjects = allSubjects.map(subject => {
+            const chapters = allChapters
+                .filter(c => c.subjectId === subject.id)
+                .map(chapter => {
+                    const topics = allTopics
+                        .filter(t => t.chapterId === chapter.id)
+                        .map(topic => {
+                            const subtopics = allSubtopics
+                                .filter(s => s.topicId === topic.id);
+                            return { ...topic, subtopics };
+                        });
+                    return { ...chapter, topics };
                 });
-            }
-
-            subjects.push({
-                ...subjectData,
-                chapters
-            });
-        }
+            return { ...subject, chapters };
+        });
 
         return { subjects };
     } catch (error) {
@@ -241,3 +227,133 @@ export async function deleteFlashcard(flashcardId) {
         throw error;
     }
 }
+
+// --- Subject CRUD ---
+
+export async function addSubject(data) {
+    try {
+        // Use custom ID if provided, otherwise auto-generate
+        const id = data.id || doc(collection(db, 'subjects')).id;
+        await setDoc(doc(db, 'subjects', id), { ...data, id });
+        return { ...data, id };
+    } catch (error) {
+        console.error('Error adding subject:', error);
+        throw error;
+    }
+}
+
+export async function updateSubject(id, data) {
+    try {
+        await setDoc(doc(db, 'subjects', id), data, { merge: true });
+    } catch (error) {
+        console.error('Error updating subject:', error);
+        throw error;
+    }
+}
+
+export async function deleteSubject(id) {
+    try {
+        const { deleteDoc } = await import('firebase/firestore');
+        await deleteDoc(doc(db, 'subjects', id));
+    } catch (error) {
+        console.error('Error deleting subject:', error);
+        throw error;
+    }
+}
+
+// --- Chapter CRUD ---
+
+export async function addChapter(data) {
+    try {
+        const id = data.id || doc(collection(db, 'chapters')).id;
+        await setDoc(doc(db, 'chapters', id), { ...data, id });
+        return { ...data, id };
+    } catch (error) {
+        console.error('Error adding chapter:', error);
+        throw error;
+    }
+}
+
+export async function updateChapter(id, data) {
+    try {
+        await setDoc(doc(db, 'chapters', id), data, { merge: true });
+    } catch (error) {
+        console.error('Error updating chapter:', error);
+        throw error;
+    }
+}
+
+export async function deleteChapter(id) {
+    try {
+        const { deleteDoc } = await import('firebase/firestore');
+        await deleteDoc(doc(db, 'chapters', id));
+    } catch (error) {
+        console.error('Error deleting chapter:', error);
+        throw error;
+    }
+}
+
+// --- Topic CRUD ---
+
+export async function addTopic(data) {
+    try {
+        const id = data.id || doc(collection(db, 'topics')).id;
+        await setDoc(doc(db, 'topics', id), { ...data, id });
+        return { ...data, id };
+    } catch (error) {
+        console.error('Error adding topic:', error);
+        throw error;
+    }
+}
+
+export async function updateTopic(id, data) {
+    try {
+        await setDoc(doc(db, 'topics', id), data, { merge: true });
+    } catch (error) {
+        console.error('Error updating topic:', error);
+        throw error;
+    }
+}
+
+export async function deleteTopic(id) {
+    try {
+        const { deleteDoc } = await import('firebase/firestore');
+        await deleteDoc(doc(db, 'topics', id));
+    } catch (error) {
+        console.error('Error deleting topic:', error);
+        throw error;
+    }
+}
+
+// --- Subtopic CRUD ---
+
+export async function addSubtopic(data) {
+    try {
+        const id = data.id || doc(collection(db, 'subtopics')).id;
+        await setDoc(doc(db, 'subtopics', id), { ...data, id });
+        return { ...data, id };
+    } catch (error) {
+        console.error('Error adding subtopic:', error);
+        throw error;
+    }
+}
+
+export async function updateSubtopic(id, data) {
+    try {
+        await setDoc(doc(db, 'subtopics', id), data, { merge: true });
+    } catch (error) {
+        console.error('Error updating subtopic:', error);
+        throw error;
+    }
+}
+
+export async function deleteSubtopic(id) {
+    try {
+        const { deleteDoc } = await import('firebase/firestore');
+        await deleteDoc(doc(db, 'subtopics', id));
+    } catch (error) {
+        console.error('Error deleting subtopic:', error);
+        throw error;
+    }
+}
+

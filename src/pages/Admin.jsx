@@ -14,6 +14,7 @@ import {
     Layers
 } from 'lucide-react';
 import FlashcardManager from '../components/admin/FlashcardManager';
+import ContentManager from '../components/admin/ContentManager';
 import { clsx } from 'clsx';
 import { db } from '../config/firebase'; // Import to check connection
 
@@ -47,9 +48,7 @@ const Admin = () => {
 
     const tabs = [
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-        { id: 'subjects', label: 'Subjects', icon: Book },
-        { id: 'chapters', label: 'Chapters', icon: List },
-        { id: 'topics', label: 'Topics', icon: FileText },
+        { id: 'curriculum', label: 'Curriculum', icon: Book },
         { id: 'flashcards', label: 'Flashcards', icon: Layers },
         { id: 'settings', label: 'Settings', icon: Settings },
     ];
@@ -93,12 +92,6 @@ const Admin = () => {
                         <h1 className="text-2xl font-bold text-slate-900 capitalize">{activeTab}</h1>
                         <p className="text-slate-500 text-sm">Manage your {activeTab} content</p>
                     </div>
-                    {activeTab !== 'dashboard' && (
-                        <button className="btn btn-primary flex items-center gap-2">
-                            <Plus size={18} />
-                            Add New
-                        </button>
-                    )}
                 </header>
 
                 {/* Content Area */}
@@ -107,14 +100,18 @@ const Admin = () => {
                         <DashboardContent />
                     )}
 
+                    {activeTab === 'curriculum' && (
+                        <ContentManager />
+                    )}
+
                     {activeTab === 'flashcards' && (
                         <FlashcardManager />
                     )}
 
-                    {activeTab !== 'dashboard' && activeTab !== 'flashcards' && (
+                    {activeTab === 'settings' && (
                         <div className="flex flex-col items-center justify-center h-64 text-slate-400">
-                            <List size={48} className="mb-4 opacity-20" />
-                            <p>Select an item to edit or create a new one.</p>
+                            <Settings size={48} className="mb-4 opacity-20" />
+                            <p>Settings coming soon.</p>
                         </div>
                     )}
                 </div>

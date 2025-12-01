@@ -12,7 +12,22 @@ export const useStore = create(
             toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 
             // Curriculum Data
-            curriculum: curriculumData,
+            curriculum: { subjects: [] }, // Start empty, fetch from DB
+            isLoading: false,
+            error: null,
+
+            fetchCurriculum: async () => {
+                set({ isLoading: true });
+                try {
+                    const { fetchCurriculum } = await import('../utils/firebaseUtils');
+                    const data = await fetchCurriculum();
+                    set({ curriculum: data, isLoading: false });
+                } catch (error) {
+                    console.error('Failed to fetch curriculum:', error);
+                    // Fallback to static data if fetch fails
+                    set({ curriculum: curriculumData, isLoading: false, error: error.message });
+                }
+            },
 
             // Helpers
             getSubject: (subjectId) => get().curriculum.subjects.find(s => s.id === subjectId),

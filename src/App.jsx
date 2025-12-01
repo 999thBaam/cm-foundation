@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
@@ -12,8 +13,15 @@ import Admin from './pages/Admin';
 import DemoDottedSurface from './pages/DemoDottedSurface';
 import Login from './pages/Login';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import { useStore } from './store/useStore';
 
 function App() {
+  const fetchCurriculum = useStore(state => state.fetchCurriculum);
+
+  useEffect(() => {
+    fetchCurriculum();
+  }, [fetchCurriculum]);
+
   return (
     <Routes>
       {/* Public Route */}

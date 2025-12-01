@@ -40,7 +40,7 @@ const ChapterView = () => {
             });
             setExpandedSections(expanded);
         }
-    }, [chapter]);
+    }, [chapter?.id]);
 
     const loadFlashcards = async () => {
         setLoadingFlashcards(true);
